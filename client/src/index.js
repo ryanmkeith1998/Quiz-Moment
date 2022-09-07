@@ -18,7 +18,7 @@ import {
 } from '@apollo/client';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000'
+  uri: 'http://localhost:4000/graphql'
 });
 
 
@@ -67,22 +67,3 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 );
- 
-// adkfjhaslkdfjasldkfj
-
-// const client = new ApolloClient({
-//   link: httpLink,
-//   cache: new InMemoryCache()
-// });
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <ApolloProvider client={client}>
-    
-//       <BrowserRouter>
-//         <App />
-//       </BrowserRouter>
-    
-//   </ApolloProvider>
-  
-// );
