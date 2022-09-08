@@ -69,9 +69,9 @@ async function startApolloServer() {
     //     res.sendFile(path.join('../../client', 'build', 'index.html'))
     // });
 
-    // const port = process.env.PORT || 4001;
+    const port = process.env.PORT || 4000;
 
-    // const publicPath = path.join( '..', "publique");
+    // const publicPath = path.join(__dirname, '../..', "public");
 
     // app.use(express.static(publicPath));
 
@@ -82,7 +82,7 @@ async function startApolloServer() {
     server.applyMiddleware({ app });
 
     app.listen(port, () =>
-        console.log(`Server ready at http://localhost:${port}${server.graphqlPath}`)
+        console.log(`Server ready at http://localhost:4000${server.graphqlPath}`)
     );
 
     return {server, app};
