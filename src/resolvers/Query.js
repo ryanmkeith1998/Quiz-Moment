@@ -1,8 +1,3 @@
-function feed(parent, args, context) {
-    return context.prisma.link.findMany()
-}
-
-
 async function currentUser(parent, args, context) {
     const {userId} = context;
     const user = context.prisma.user.findUnique({
@@ -82,7 +77,6 @@ async function getAllTaken(parent, args, context) {
 }
 
 module.exports = {
-    feed,
     currentUser,
     findQuiz,
     getQuizzes,

@@ -100,7 +100,6 @@ function ResultCard(props) {
   })
 
   const eliminateResult = () => {
-    console.log("here is the id: ", Number.parseInt(Result.id));
     return deleteResult();
   }
 

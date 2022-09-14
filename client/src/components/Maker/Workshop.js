@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { AUTH_TOKEN } from '../../constants';
 import GearIcon from '../../icons/gear.png';
-import QuizOverview from './QuizOverview';
 import React, { useState } from 'react';
 import { QUIZ_CREATION } from '../Mutations';
 
@@ -111,5 +110,4 @@ function Workshop() {
     </div>
   );
 }
-
 export default Workshop;

@@ -1,5 +1,5 @@
 import { useNavigate, NavLink, useLocation, Routes, Route } from 'react-router-dom';
-import { gql, useQuery, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { AUTH_TOKEN } from '../../constants';
 import GearIcon from '../../icons/gear.png';
 import React, { useState, useEffect } from 'react';

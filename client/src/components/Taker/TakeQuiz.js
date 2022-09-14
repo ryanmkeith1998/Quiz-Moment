@@ -1,5 +1,5 @@
 import { useNavigate, Routes, Route, NavLink } from 'react-router-dom';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { useLocation} from "react-router-dom";
 import { AUTH_TOKEN } from '../../constants';
 import GearIcon from '../../icons/gear.png';
@@ -67,10 +67,6 @@ function TakeQuiz(props) {
             setItems(list);
             setReady(true);
         }
-    }
-
-    const showList = () => {
-        console.log(items);
     }
 
 

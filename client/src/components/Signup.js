@@ -5,6 +5,7 @@ import { AUTH_TOKEN } from '../constants';
 import Login from './Login';
 import { SIGNUP_MUTATION } from './Mutations';
 
+
 function Signup() {
   const navigate = useNavigate();
   const [formState, setFormState] = useState({
@@ -55,6 +56,7 @@ function Signup() {
     return signup();
   }
 
+
   // passwordCheck - Helper function to help determine if password was input correctly
   // ---------------------------------------------------------------------------------
   const passwordCheck = () => {
@@ -66,6 +68,7 @@ function Signup() {
       elem.style.borderStyle = "hidden";
     } 
   }
+
 
   // passwordValid - Helper function to help determine if password is of the correct length
   // --------------------------------------------------------------------------------------
@@ -100,7 +103,6 @@ function Signup() {
       <form className="login-form" onSubmit={() => {
         signup_process()
         .then((e) => {
-          console.log(e);
           window.location.reload();
         })
       navigate('/MyProfile');

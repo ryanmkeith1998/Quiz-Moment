@@ -66,7 +66,6 @@ function Login() {
         
         login_process()
           .then((e) => {
-            console.log(e);
             window.location.reload();
           })
         navigate('/MyProfile');

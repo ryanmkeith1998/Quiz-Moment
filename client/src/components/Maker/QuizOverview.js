@@ -6,8 +6,8 @@ import GearIcon from '../../icons/gear.png';
 import QuizTitle from './Title-Section';
 import QuizResult from './Results/Result-Section';
 import QuizQuestion from './Questions/Question-Section';
-import React, { useState, useEffect } from 'react';
-import { ELIM_QUIZ, PUBLISH_QUIZ } from '../Mutations';
+import React, { useState } from 'react';
+import { ELIM_QUIZ } from '../Mutations';
 import { GET_QUIZ } from '../Queries';
 
 function QuizOverview() {
@@ -27,14 +27,12 @@ function QuizOverview() {
             alert(e);
         },
         onCompleted: (e) => {
-            console.log("refetch complete");
             setQuiz(e.findQuiz);
             setReady(true);
         },
     });
 
     function makeRefetch() {
-        console.log("okay im refetching...");
         refetch();
     }
 

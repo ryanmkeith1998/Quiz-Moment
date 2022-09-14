@@ -46,7 +46,7 @@ function QuestionChoice(props) {
         setResults([]);
       };
       (e.getResults).map((result) => {
-        let newResult = <TheResults result={result.name} onClick={() => {console.log(result.name)}}/>
+        let newResult = <TheResults result={result.name}/>
         setResults(oldResults => [...oldResults, newResult])
       })
     }
@@ -124,7 +124,6 @@ function QuestionChoice(props) {
   });
 
   const editChoice = () => {
-    console.log((Choice.resultName));
     if (Choice.resultName === undefined) {
       alert("please input a result");
       return false;

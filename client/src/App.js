@@ -7,7 +7,6 @@ import Workshop from './components/Maker/Workshop';
 import QuizOverview from './components/Maker/QuizOverview';
 import Feed from './components/Feed';
 import TakeQuiz from './components/Taker/TakeQuiz';
-import TestPapa from './testRange/testPapa';
 import ShowResult from './components/Taker/ShowResult';
 import ViewQuiz from './components/Maker/ViewQuiz';
 import { Routes, Route } from 'react-router-dom';
@@ -31,7 +30,6 @@ const Main = () => (
       <Route exact path='/Overview/*' element={<QuizOverview />}></Route>
       <Route exact path='/Feed/*' element={<Feed />}></Route>
       <Route exact path='/TakeQuiz/*' element={<TakeQuiz />}></Route>
-      <Route exact path='/TestPapa/*' element={<TestPapa />}></Route>
       <Route exact path='/ShowResult/*' element={<ShowResult />}></Route>
       <Route exact path="/ViewQuiz" element={<ViewQuiz />}></Route>
     </Routes>

@@ -1,17 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { useQuery, useMutation } from '@apollo/client';
 import { useLocation} from "react-router-dom";
 import { AUTH_TOKEN } from '../../constants';
 import GearIcon from '../../icons/gear.png';
-import React, { useState, useEffect } from 'react';
-// import { ELIM_QUIZ, PUBLISH_QUIZ } from '../Mutations';
-// import { GET_QUIZ } from '../Queries';
-
+import React from 'react';
 
 function ViewQuiz() {
     const navigate = useNavigate();
     const quiz = useLocation().state.quiz;
-    console.log(quiz);
 
 
     // goToProfile and logoutClick - Helper functions
@@ -92,7 +87,6 @@ function Results(props) {
 }
 
 function ResultCard({ result }) {
-    console.log(result);
     return (
         <div className="result-card">
             <div>
@@ -108,7 +102,6 @@ function ResultCard({ result }) {
 }
 
 function Questions({ questions }) {
-    console.log(questions);
     let index = 1;
     const questionsList = questions.map((question) => 
             <Question question={question} key={question.id} place={index++}/>

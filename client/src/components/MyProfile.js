@@ -23,7 +23,6 @@ function Profile() {
     onCompleted: (e) => {
       setQuizzes([]);
       e.getQuizzes.map((quiz) => {
-        console.log(quiz);
         let newQuiz = <ShowQuiz quiz={quiz} title={quiz.title} id={quiz.id} published={quiz.published} key={quiz.id}/>;
         setQuizzes(oldQuizzes => [...oldQuizzes, newQuiz]);
       })
@@ -32,7 +31,6 @@ function Profile() {
 
   const getTakens = useQuery(GET_ALL_TAKEN, {
     onCompleted: (e) => {
-      console.log(e);
       setTakens([]);
       (e.getAllTaken).map((taken) => {
         let newTaken = <ShowTaken quizName={taken.quizName} name={taken.name} description={taken.description} key={taken.id}/>;

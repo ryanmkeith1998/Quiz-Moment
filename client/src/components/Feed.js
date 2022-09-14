@@ -1,10 +1,10 @@
 import { useNavigate, Routes, Route, NavLink } from 'react-router-dom';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { AUTH_TOKEN } from '../constants';
 import GearIcon from '../icons/gear.png';
 import React, { useState } from 'react';
 import TakeQuiz from './Taker/TakeQuiz';
-import { GET_USER, GET_ALL_QUIZZES } from './Queries';
+import { GET_ALL_QUIZZES } from './Queries';
 
 
 function Feed() {
