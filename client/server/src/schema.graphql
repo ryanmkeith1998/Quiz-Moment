@@ -1,0 +1,126 @@
+type Query {
+  info: String!
+  feed: [Link!]!
+  currentUser: User
+  findQuiz(title: String!): Quiz
+  getQuizzes: [Quiz]
+  getAllQuizzes: [Quiz]
+  findTaken(quizId: Int!): Taken
+  getAllTaken: [Taken]
+}
+
+type Mutation {
+  post(url: String!, description: String!): Link!
+  signup(username: String!, password: String!, name: String!): AuthPayload
+  login(username: String!, password: String!): AuthPayload
+  vote(linkId: ID!): Vote
+  deleteAcc: didItWork!
+
+  createQuiz(title: String!, description: String!): Quiz!
+  addQuestion(content: String!, quizTitle: String!): Question!
+  addChoice(quizTitle: String!, questionContent: String!, content: String!, resultName: String!, value: Int!): Choice!
+  addResult(name: String!, description: String!, quizTitle: String!): Result!
+  addTaken(quizId: Int!, quizName: String!, name: String!, description: String!, score: Int!): Taken!
+  addOthers(quizId: Int!, name: String!, description: String!, score: Int!): Others!
+
+  getResults(title: String!): [Result]
+
+  changeTitle(qid: Int!, title: String!, description: String!): Quiz
+  changeQuestion(qid: Int!, content: String!): Question
+  changeResult(rid: Int!, name: String!, description: String!): Result
+  changeChoice(cid: Int!, content: String!, newResult: String!, value: Int!, quizTitle: String!): Choice
+
+  deleteChoice(cid: Int!): didItWork
+  deleteQuestion(qid: Int!): didItWork
+  deleteResult(rid: Int!): didItWork
+  deleteQuiz(qid: Int!): didItWork
+
+  publishQuiz(qid: Int!): Quiz
+}
+
+type Link {
+  id: ID!
+  description: String!
+  url: String!
+  postedBy: User
+  votes: [Vote!]!
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type User {
+    id: ID!
+    name: String!
+    username: String!
+    links: [Link!]!
+    quizzes: [Quiz!]!
+    taken: [Taken!]!
+}
+
+type Vote {
+  id: ID!
+  link: Link!
+  user: User!
+}
+
+type didItWork {
+  result: Boolean
+}
+
+type Quiz {
+  id: ID!
+  createdAt: DateTime!
+  title: String!
+  description: String!
+  questions: [Question!]!
+  endings: [Result!]!
+  ownedBy: User
+  published: Boolean!
+}
+
+type Question {
+  id: ID!
+  content: String!
+  choices: [Choice!]!
+  ownedBy: Quiz
+}
+
+type Choice {
+  id: ID!
+  content: String!
+  value: Int!
+  result: Result
+  ownedBy: Question
+}
+
+type Result {
+  id: ID!
+  name: String!
+  description: String!
+  ownedBy: Quiz
+  choices: [Choice!]!
+}
+
+type Taken {
+  id: ID!
+  quizId: Int!
+  quizName: String!
+  name: String!
+  description: String!
+  score: Int!
+  others: [Others]
+  ownedBy: User
+}
+
+type Others {
+  id: ID!
+  name: String!
+  description: String!
+  score: Int!
+  ownedBy: Taken
+}
+
+scalar DateTime

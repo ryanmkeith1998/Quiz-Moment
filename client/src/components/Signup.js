@@ -5,7 +5,10 @@ import { AUTH_TOKEN } from '../constants';
 import Login from './Login';
 import { SIGNUP_MUTATION } from './Mutations';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f7f6fb82060b89a8fcf4102b880f9fbacb3bc76b
 function Signup() {
   const navigate = useNavigate();
   const [formState, setFormState] = useState({
@@ -56,7 +59,10 @@ function Signup() {
     return signup();
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f7f6fb82060b89a8fcf4102b880f9fbacb3bc76b
   // passwordCheck - Helper function to help determine if password was input correctly
   // ---------------------------------------------------------------------------------
   const passwordCheck = () => {
@@ -69,7 +75,10 @@ function Signup() {
     } 
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f7f6fb82060b89a8fcf4102b880f9fbacb3bc76b
   // passwordValid - Helper function to help determine if password is of the correct length
   // --------------------------------------------------------------------------------------
   const passwordValid = () => {
@@ -103,6 +112,10 @@ function Signup() {
       <form className="login-form" onSubmit={() => {
         signup_process()
         .then((e) => {
+<<<<<<< HEAD
+=======
+          console.log(e);
+>>>>>>> f7f6fb82060b89a8fcf4102b880f9fbacb3bc76b
           window.location.reload();
         })
       navigate('/MyProfile');
