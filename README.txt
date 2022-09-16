@@ -10,8 +10,22 @@ For Server:
     -Install these packages (using "npm i" as shown in the Client section):
     {
         apollo-server-express
-        ...apparently thats it. I'll have to test this on another computer...
+        graphql
+        prisma
     }
+    - type: "node index.js"
+
+For Prisma Studio (this allows you to see all of the database tables that exist for the website):
+    -Open a new Terminal
+    - type: "npx prisma studio"
+
+If you have any issues:
+    Try refreshing the page and checking again before anything else. This should fix just about any issue you'll have. 
+    If you continue to have issues, try emailing me at:
+
+        ryanmkeith1998@gmail.com
+
+    and I will see what I can do to help you, any feedback you have is also welcome!
 
 Website Rundown:
     This is a website designed primarily around the creation and sharing of fun online quizzes. Sprouting from
@@ -23,12 +37,3 @@ Website Rundown:
     but you really want your friends to think you are Sourdough. You keep taking the quiz until you get the result you 
     want and then you screenshot it and show everyone. Well on my website, the first result is forever stored and showed
     off on your profile, so anyone wishing to fact check you need simply to check your account for themselves.
-
-Directions for use:
-    If you ever have any issues while creating a quiz, just refresh the page and try again.
-    This should fix just about any issue you'll have. If you continue to have this issue, try emailing me at:
-
-        ryanmkeith1998@gmail.com
-
-    and I will see what I can do to help you.
-
